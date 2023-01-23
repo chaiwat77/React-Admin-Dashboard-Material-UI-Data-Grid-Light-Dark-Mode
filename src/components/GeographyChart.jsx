@@ -4,7 +4,8 @@ import { ResponsiveChoropleth } from '@nivo/geo'
 import { mockGeographyData as data } from "../data/mockData";
 import { geoFeatures } from "../data/mockGeoFeatures";
 
-const GeographyChart = ( {isDashboard = false} ) => {
+const GeographyChart = ( {isDashboard = false } ) => {  
+    console.log(isDashboard)  
     const theme = useTheme();
     const colors =  tokens(theme.palette.mode);
     return(

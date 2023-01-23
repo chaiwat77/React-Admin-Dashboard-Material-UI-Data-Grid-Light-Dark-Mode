@@ -14,6 +14,7 @@ import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
 
+
 const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -149,7 +150,8 @@ const Dashboard = () => {
             </Box>
           </Box>
           <Box height="250px" m="-20px 0 0 0">
-            <LineChart isDashboard={true} />
+            <LineChart isDashboard={true} /> 
+            {/* ส่ง props ไปเช็คค่าในหน้า LineChart */}
           </Box>
         </Box>
         <Box
@@ -243,7 +245,7 @@ const Dashboard = () => {
             Sales Quantity
           </Typography>
           <Box height="250px" mt="-20px">
-            <BarChart isDashboard={true} />
+            <BarChart  isDashboard={true}  />
           </Box>
         </Box>
         <Box

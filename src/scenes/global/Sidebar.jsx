@@ -18,7 +18,9 @@ import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 
-const Item = ({ title, to, icon, selected, setSelected }) => {
+const Item = (props) => {
+  // const Item = ({ title, to, icon, selected, setSelected }) => {
+    const { title, to, icon, selected, setSelected } = props;
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     return (
@@ -35,11 +37,17 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
       </MenuItem>
     );
   };
+
+
   
-  const Sidebar = () => {
+
+  const Sidebar = ({isSidebar}) => {
     const theme = useTheme();
+
+    // const colors = tokens(theme.palette.primary);
     const colors = tokens(theme.palette.mode);
-    const [isCollapsed, setIsCollapsed] = useState(false);
+    console.log(colors);
+    const [isCollapsed, setIsCollapsed] = useState(isSidebar);
     const [selected, setSelected] = useState("Dashboard");
   
     return (
@@ -63,6 +71,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
         }}
       >
         <ProSidebar collapsed={isCollapsed}>
+         
           <Menu iconShape="square">
             {/* LOGO AND MENU ICON */}
             <MenuItem
@@ -183,6 +192,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
                 selected={selected}
                 setSelected={setSelected}
               />
+              
   
               <Typography
                 variant="h6"
@@ -226,6 +236,8 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
     );
   };
   
+
+
   
 
 export default Sidebar;
